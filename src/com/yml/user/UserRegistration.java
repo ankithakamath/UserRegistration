@@ -34,6 +34,12 @@ public class UserRegistration {
 		Boolean result = Pattern.matches(string, email);
 		return result;
 	}
+	
+	public Boolean validatePhone(String phone) {
+		String string = "[0-9]{2}\\s[1-9][0-9]{9}";
+		Boolean result = Pattern.matches(string, phone);
+		return result;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -42,6 +48,7 @@ public class UserRegistration {
 
 		System.out.println("Enter Firstname which starts with Cap and has minimum 3 characters");
 		String firstName = scanner.nextLine();
+		
 		Boolean firstNameCheck = register.validateFirstName(firstName);
 		if (firstNameCheck) {
 			System.out.println("Valid first name");
@@ -56,12 +63,25 @@ public class UserRegistration {
 			System.out.println("Valid last name");
 		} else
 			System.out.println("Invalid last name");
+		
+		
 		System.out.println("Enter valid email");
 		String email = scanner.nextLine();
+		
 		Boolean emailCheck = register.validateEmail(email);
 		if (emailCheck) {
 			System.out.println("Valid email");
 		} else
 			System.out.println("Invalid email");
+		
+		
+		System.out.println("Enter valid phone number ");
+		String phone = scanner.nextLine();
+		
+		Boolean phoneCheck = register.validatePhone(phone);
+		if (phoneCheck) {
+			System.out.println("Valid phone number");
+		} else
+			System.out.println("Invalid phone number");
 	}
-}
+	}
