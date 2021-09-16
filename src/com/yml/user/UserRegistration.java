@@ -28,6 +28,13 @@ public class UserRegistration {
 		Boolean result = Pattern.matches(string, LastName);
 		return result;
 	}
+	
+	public Boolean validateEmail(String email) {
+		String string = "^[a-zA-z0-9]+?(.)[a-zA-Z0-9+_-]*@[a-zA-Z]+\\.[a-zA-z]{2,4}?(.)[A-za-z]*$";
+		Boolean result = Pattern.matches(string, email);
+		return result;
+	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner scanner = new Scanner(System.in);
@@ -41,7 +48,7 @@ public class UserRegistration {
 		} else
 			System.out.println("Invalid first name");
 
-		System.out.println("\nEnter Secondname which starts with Cap and has minimum 3 characters");
+		System.out.println("\nEnter last name which starts with Cap and has minimum 3 characters");
 		String secondName = scanner.nextLine();
 
 		Boolean secondNameCheck = register.validateLastName(secondName);
@@ -49,4 +56,12 @@ public class UserRegistration {
 			System.out.println("Valid last name");
 		} else
 			System.out.println("Invalid last name");
-	}}
+		System.out.println("Enter valid email");
+		String email = scanner.nextLine();
+		Boolean emailCheck = register.validateEmail(email);
+		if (emailCheck) {
+			System.out.println("Valid email");
+		} else
+			System.out.println("Invalid email");
+	}
+}
