@@ -40,6 +40,12 @@ public class UserRegistration {
 		Boolean result = Pattern.matches(string, phone);
 		return result;
 	}
+	
+	public Boolean validatePassword(String password) {
+		String string = "[0-9A-Za-z]{8}[0-9A-Za-z]*";
+		Boolean result = Pattern.matches(string, password);
+		return result;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -83,5 +89,17 @@ public class UserRegistration {
 			System.out.println("Valid phone number");
 		} else
 			System.out.println("Invalid phone number");
+	
+	
+		System.out.println("Enter valid password ");
+		String password = scanner.nextLine();
+		
+	
+		Boolean passwordCheck = register.validatePassword(password);
+		if (passwordCheck) {
+			System.out.println("Valid password");
+		} else
+			System.out.println("Invalid password");
 	}
 	}
+	
