@@ -30,7 +30,7 @@ public class UserRegistration {
 	}
 	
 	public Boolean validateEmail(String email) {
-		String string = "^[a-zA-z0-9]+?(.)[a-zA-Z0-9+_-]*@[a-zA-Z]+\\.[a-zA-z]{2,4}?(.)[A-za-z]*$";
+		String string = "([a-zA-Z0-9])*[A-Z]([a-zA-Z0-9])*{8}[a-zA-Z0-9]*";
 		Boolean result = Pattern.matches(string, email);
 		return result;
 	}
