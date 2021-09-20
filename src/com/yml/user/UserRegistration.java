@@ -42,7 +42,7 @@ public class UserRegistration {
 	}
 	
 	public Boolean validatePassword(String password) {
-		String string = "(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&+=()]) [a-zA-Z0-9@#$%^&+=()]{8}";
+		String string = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";;
 		Boolean result = Pattern.matches(string, password);
 		return result;
 	}
@@ -101,5 +101,4 @@ public class UserRegistration {
 		} else
 			System.out.println("Invalid password");
 	}
-	}
-	
+}
